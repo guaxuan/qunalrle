@@ -5,11 +5,10 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld'
-}
+  export default {
+    name: 'HelloWorld'
+	}
 </script>
 
-<style scoped>
-
-</style>
+<!-- Add "scoped" attribute to limit CSS component only -->
+<style scoped></style>
