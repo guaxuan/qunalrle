@@ -1,8 +1,9 @@
 <template>
   <div class="info">
-    <div class="container ">
+
+    <div class="container adress-wrap">
       <span class="ico-img iconfont">&#xe600;</span>
-      <i class="adress">{{adress}}</i>
+      <i class="adress">{{info.adress}}</i>
       <span class="right-btn iconfont">&#xe62d;</span>
     </div>
 
@@ -13,6 +14,25 @@
       <i class="descript">{{des}}</i>
       <span class="right-btn iconfont">&#xe62d;</span>
     </div>
+
+    <div class="container grade-wrap">
+      <span class="ico-img iconfont">&#xe608;</span>
+      <i class="stars iconfont">&#xe642;&#xe642;&#xe642;&#xe642;&#xe642;</i>
+      <em class="grades">{{grades + '分'}}</em>
+      <span class="comment">{{parseInt(info.comment) + '评论'}}</span>
+      <span class="right-btn iconfont">&#xe62d;</span>
+    </div>
+
+    <div class="container tips-wrap">
+      <span class="ico-img iconfont">&#xe60a;</span>
+      <i class="msg">{{info.tips}}</i>
+      <span class="right-btn iconfont">&#xe62d;</span>
+    </div>
+    
+    <div class="container recommen-wrap">
+      <span class="ico-img iconfont">&#xe75d;</span>
+      <i class="msg">去哪儿推荐</i>
+    </div>
   </div>
 </template>
 
@@ -21,8 +41,15 @@
     name: 'info',
     data () {
       return {
-        adress: '北京市东城区景山前街4号',
         des: '查看景点简介及开放时间'
+      }
+    },
+    props: {
+      info: Object
+    },
+    computed: {
+      grades () {
+        return parseInt(this.info.grades * 10) / 10
       }
     }
   }
@@ -32,17 +59,20 @@
 <style lang="stylus" scoped>
   .info
     position relative
-    background #fff
     margin-top  -.06rem
     border-radius .06rem .06rem 0 0
-    padding .1rem .20rem 0
+    padding-top .1rem
     .container
-      font-size .26rem
+      font-size .28rem
       color #000
-      line-height .87rem
+      line-height .88rem
+      margin-bottom .2rem
+      background #fff
+      padding-left .20rem
+      padding-right .20rem
       .ico-img
         font-size .22rem
-        color #eee
+        color #9e9e9e
         float left
         margin-right .20rem
       .right-btn
@@ -51,5 +81,29 @@
         color #ccc
     .border-container
       display block
-      border-bottom .01rem solid #f5f5f5 
+      border-bottom .01rem solid #f5f5f5
+    .adress-wrap
+      margin-bottom 0 
+    .grade-wrap
+      height .80rem
+      .stars
+        color #ffb436
+      .grades
+        color #ff8300
+      .comment
+        color #9e9e9e
+    .tips-wrap
+      background #faeee0
+      color #f1441a
+      .ico-img
+        color #f1441a
+        font-size .28rem
+        margin-right .12rem
+    .recommen-wrap
+      font-size .32rem
+      color #333
+      margin-bottom 0
+      .ico-img
+        color #ed7773
+        font-size .44rem
 </style>

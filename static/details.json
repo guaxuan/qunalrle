@@ -1,7 +1,96 @@
 {
-  "00001": {
-    "title": "故宫(AAAAA景区)",
-    "count": 10,
-    "src": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"
+  "ret": true,
+  "data": {
+    "00001": {
+      "show": {
+        "title": "故宫(AAAAA景区)",
+        "count": "10",
+        "src": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"
+      },
+      "info": {
+        "adress": "北京市东城区景山前街4号",
+        "comment": "175464.22",
+        "tips": "除法定节假日，故宫博物院实行周一闭馆。",
+        "grades": "5.0"
+      },
+      "ticket": [
+        {
+          "type": "故宫成人票",
+          "info": [
+            {
+              "name": "上午场",
+              "subname": "凭身份证入园",
+              "price": "39.9"
+            },
+            {
+              "name": "下午场",
+              "subname": "凭身份证入园",
+              "price": "40"
+            },
+            {
+              "name": "故宫+珍宝馆+钟表馆",
+              "subname": "凭身份证入园",
+              "price": "60"
+            }
+          ]
+        },
+        {
+          "type": "故宫学生票",
+          "info": [
+            {
+              "name": "上午场",
+              "subname": "凭身份证入园",
+              "price": "20"
+            },
+            {
+              "name": "下午场",
+              "subname": "凭身份证入园",
+              "price": "20"
+            },
+            {
+              "name": "故宫+珍宝馆+钟表馆",
+              "subname": "凭身份证入园",
+              "price": "30"
+            }
+          ]
+        },
+        {
+          "type": "故宫老人票",
+          "info": [
+            {
+              "name": "上午场",
+              "subname": "凭身份证入园",
+              "price": "20"
+            },
+            {
+              "name": "下午场",
+              "subname": "凭身份证入园",
+              "price": "20"
+            },
+            {
+              "name": "故宫+珍宝馆+钟表馆",
+              "subname": "凭身份证入园",
+              "price": "30"
+            }
+          ]
+        },
+        {
+          "type": "故宫导览器",
+          "info": [
+            {
+              "name": "中文版",
+              "subname": "免押金",
+              "price": "9.8"
+            },
+            {
+              "name": "英文版",
+              "subname": "免押金",
+              "price": "40"
+            }
+          ]
+        }
+      ]
+    }
   }
 }
+

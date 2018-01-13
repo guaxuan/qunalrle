@@ -1,7 +1,8 @@
 <template>
-	<div>
-		<details-show :detailsInfo="detailsInfo" :imgId="id"></details-show>
-    <details-info></details-info>
+	<div class="details">
+		<details-show :show="show" :imgId="id"></details-show>
+    <details-info :info="info"></details-info>
+    <Details-tickets :ticket="ticket"></Details-tickets>
 	</div>
   
 </template>
@@ -9,17 +10,21 @@
 <script>
   import DetailsShow from './show'
   import DetailsInfo from './info'
+  import DetailsTickets from './tickets'
   import axios from 'axios'
   export default {
     name: 'detail',
     components: {
       DetailsShow,
-      DetailsInfo
+      DetailsInfo,
+      DetailsTickets
     },
     data () {
       return {
         id: '00001', // 由上一页面传入
-        detailsInfo: {}
+        show: {},
+        info: {},
+        ticket: []
       }
     },
     methods: {
@@ -29,8 +34,10 @@
           .catch(this.handleGetDataErr.bind(this))
       },
       handleGetDataSucc (res) {
-        const data = res.data
-        this.detailsInfo = data[this.id]
+        const details = res.data.data[this.id]
+        this.show = details.show
+        this.info = details.info
+        this.ticket = details.ticket
       },
       handleGetDataErr () {
         console.log('Error')
@@ -43,6 +50,7 @@
 </script>
 
 
-<style scoped>
-	
+<style lang="stylus" scoped>
+  .details
+    background-color #f5f5f5
 </style>

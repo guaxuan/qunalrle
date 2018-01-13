@@ -2,11 +2,11 @@
   <div class="show">
     <div class="show-img">
       <span class="back iconfont">&#xe624;</span>
-      <img class="item" :src="detailsInfo.src" @click="handleShowClick"/>
-      <span class="title">{{detailsInfo.title}}</span>
+      <img class="item" :src="show.src" @click="handleShowClick"/>
+      <span class="title">{{show.title}}</span>
       <span class="count iconfont">
         <i class="iconfont">&#xe608;</i>
-        <em>{{detailsInfo.count}}</em>
+        <em>{{parseInt(show.count)}}</em>
       </span>
     </div>
     <ShowSlide :imgList="imgList" v-if="isShow" @touch="handleTouch"></ShowSlide>
@@ -25,7 +25,7 @@
       }
     },
     props: {
-      detailsInfo: Object,
+      show: Object,
       imgId: String
     },
     components: {

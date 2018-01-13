@@ -33,6 +33,7 @@
     },
     created () {
       this.urlList = this.imgList
+      console.log(this.imgList)
     }
   }
 </script>
