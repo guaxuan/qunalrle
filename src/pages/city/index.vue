@@ -1,11 +1,11 @@
 <template>
-	<div>city</div>
+  <div>city</div>
 </template>
 
 <script>
-	export default {
-		name: 'city'
-	}
+  export default {
+    name: 'city'
+  }
 </script>
 
 <style></style>
