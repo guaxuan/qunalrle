@@ -26,20 +26,6 @@
       handleScrollAlp (e) {
         this.keys = e.target.innerText
         this.$emit('change', e.target.innerText)
-      },
-      handleinitScroll () {
-        let allEles = document.querySelectorAll('.cl-item')
-        for (var i = 0; i < allEles.length; i++) {
-          if (this.returnAlp === allEles[i].innerText) {
-            allEles[i].className = 'cl-item active'
-            this.isActive = i
-          }
-        }
-      }
-    },
-    watch: {
-      returnAlp () {
-        // this.handleinitScroll()
       }
     }
   }
