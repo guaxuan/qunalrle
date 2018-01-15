@@ -36,8 +36,6 @@
     name: 'tickets',
     data () {
       return {
-        isActive: '',
-        isKeys: '',
         ifKeys: Number
       }
     },

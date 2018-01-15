@@ -2,7 +2,8 @@
 	<div class="details">
 		<details-show :show="show" :imgId="id"></details-show>
     <details-info :info="info"></details-info>
-    <Details-tickets :ticket="ticket"></Details-tickets>
+    <details-recommend></details-recommend>
+    <details-tickets :ticket="ticket"></details-tickets>
 	</div>
   
 </template>
@@ -10,6 +11,7 @@
 <script>
   import DetailsShow from './show'
   import DetailsInfo from './info'
+  import DetailsRecommend from './recommend'
   import DetailsTickets from './tickets'
   import axios from 'axios'
   export default {
@@ -17,6 +19,7 @@
     components: {
       DetailsShow,
       DetailsInfo,
+      DetailsRecommend,
       DetailsTickets
     },
     data () {

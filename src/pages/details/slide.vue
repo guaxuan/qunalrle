@@ -53,8 +53,8 @@
     .swiper-pagination
       color #fff
     .img-container
-      display: flex
-      align-items: center
+      display flex
+      align-items center
       .img-item
         width 100%
 </style>

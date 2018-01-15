@@ -29,7 +29,7 @@
       <span class="right-btn iconfont">&#xe62d;</span>
     </div>
     
-    <div class="container recommen-wrap">
+    <div class="container recommend-wrap">
       <span class="ico-img iconfont">&#xe75d;</span>
       <i class="msg">去哪儿推荐</i>
     </div>
@@ -99,7 +99,7 @@
         color #f1441a
         font-size .28rem
         margin-right .12rem
-    .recommen-wrap
+    .recommend-wrap
       font-size .32rem
       color #333
       margin-bottom 0
