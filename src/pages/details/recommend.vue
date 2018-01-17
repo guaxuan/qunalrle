@@ -1,5 +1,11 @@
 <template>
   <div class="recommend">
+
+    <div class="recommend-head">
+      <span class="ico-img iconfont">&#xe75d;</span>
+      <i class="msg">去哪儿推荐</i>
+    </div>
+    
     <div class="recommend-container">
       <div class="recommend-left">
         <h4 class="recommend-title">
@@ -15,34 +21,53 @@
           ¥
           <i>50</i>
         </span>
-        <button class="recommend-order-btn">预定</button>
+        <button class="recommend-order-btn" @click="handleOrderClick">预定</button>
       </div>
     </div>
-    
+
   </div>
 </template>
 
 <script>
   export default {
-    name: 'tickets'
+    name: 'tickets',
+    methods: {
+      handleOrderClick () {
+        this.$emit('order')
+      }
+    }
   }
 </script>
 
 
 <style lang="stylus" scoped>
+.recommend-head
+  line-height .88rem
+  background #fff
+  padding 0 .20rem
+  font-size .28rem
+  color #333
+  .ico-img
+    color #ed7773
+    font-size .44rem
 .recommend-container
   display flex
   padding .2rem .2rem .24rem .2rem
   overflow hidden
   text-overflow ellipsis
   background #fff
+  border-top 1px solid #dadada
   .recommend-left
+    flex 2.92
+    border-right 1px solid #dadada
     .recommend-title
+      margin-right .1rem
       color #333
       font-size .3rem
       line-height .52rem
     .recommend-tips
       display flex
+      padding .04rem 0 .08rem
       .recommend-tips-item
         margin-right .24rem
         color #616161
@@ -55,11 +80,15 @@
     flex-direction column
     align-items center
     justify-content center
-    width .02rem
+    padding-left .2rem
     .recommend-order-price
       color #ff9800
+      width 100%
+      text-align center
     .recommend-order-btn
       background #ff9800
+      out-line none
+      width 100%
       color #fff
       height .6rem
       font-size .28rem

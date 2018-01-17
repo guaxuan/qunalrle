@@ -9,7 +9,10 @@
         <em>{{parseInt(show.count)}}</em>
       </span>
     </div>
-    <ShowSlide :imgList="imgList" v-if="isShow" @touch="handleTouch"></ShowSlide>
+    <ShowSlide :imgList="imgList" 
+                v-if="isShow" 
+                @touch="handleTouch">
+    </ShowSlide>
   </div>
 </template>
 
@@ -33,12 +36,12 @@
     },
     methods: {
       handleShowClick () {
-        this.isShow = true
         axios.get('/api/slide.json')
           .then(this.handleGetSlideSucc.bind(this))
           .catch(this.handleGetSlideErr.bind(this))
       },
       handleGetSlideSucc (res) {
+        this.isShow = true
         this.imgList = res.data[this.imgId]
       },
       handleGetSlideErr () {

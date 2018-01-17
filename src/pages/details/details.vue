@@ -1,9 +1,12 @@
 <template>
 	<div class="details">
-		<details-show :show="show" :imgId="id"></details-show>
+	  <details-show :show="show" :imgId="id"></details-show>
     <details-info :info="info"></details-info>
-    <details-recommend></details-recommend>
+    <details-recommend @order="handleOrderClick"></details-recommend>
     <details-tickets :ticket="ticket"></details-tickets>
+    <transition name="dock">
+      <details-dock v-show="dock" @close="handleCloseClick"></details-dock>
+    </transition>
 	</div>
   
 </template>
@@ -13,6 +16,7 @@
   import DetailsInfo from './info'
   import DetailsRecommend from './recommend'
   import DetailsTickets from './tickets'
+  import DetailsDock from './dock'
   import axios from 'axios'
   export default {
     name: 'detail',
@@ -20,14 +24,16 @@
       DetailsShow,
       DetailsInfo,
       DetailsRecommend,
-      DetailsTickets
+      DetailsTickets,
+      DetailsDock
     },
     data () {
       return {
         id: '00001', // 由上一页面传入
         show: {},
         info: {},
-        ticket: []
+        ticket: [],
+        dock: false
       }
     },
     methods: {
@@ -44,6 +50,12 @@
       },
       handleGetDataErr () {
         console.log('Error')
+      },
+      handleOrderClick () {
+        this.dock = true
+      },
+      handleCloseClick () {
+        this.dock = false
       }
     },
     created () {
@@ -56,4 +68,8 @@
 <style lang="stylus" scoped>
   .details
     background-color #f5f5f5
+  .dock-enter, .dock-leave-to
+    transform translateY(100%)
+  .dock-enter-active, .dock-leave-active
+    transition all .5s
 </style>

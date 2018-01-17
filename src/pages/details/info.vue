@@ -28,11 +28,6 @@
       <i class="msg">{{info.tips}}</i>
       <span class="right-btn iconfont">&#xe62d;</span>
     </div>
-    
-    <div class="container recommend-wrap">
-      <span class="ico-img iconfont">&#xe75d;</span>
-      <i class="msg">去哪儿推荐</i>
-    </div>
   </div>
 </template>
 
@@ -99,11 +94,4 @@
         color #f1441a
         font-size .28rem
         margin-right .12rem
-    .recommend-wrap
-      font-size .32rem
-      color #333
-      margin-bottom 0
-      .ico-img
-        color #ed7773
-        font-size .44rem
 </style>
